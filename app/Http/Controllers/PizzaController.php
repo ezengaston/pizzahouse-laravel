@@ -11,12 +11,17 @@ class PizzaController extends Controller
     {
         $pizzas = Pizza::all();
       
-        return view('pizzas', ['pizzas' => $pizzas]);
+        return view('pizzas.index', ['pizzas' => $pizzas]);
     }
 
     public function show($id)
     {
         echo($id);
-        return view('details');
+        return view('pizzas.show');
+    }
+
+    public function create()
+    {
+        return view('pizzas.create');
     }
 }
